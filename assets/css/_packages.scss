@@ -1,0 +1,68 @@
+.packages {
+
+    .box-container {
+
+        @include grid(30rem);
+
+        .box {
+            border-radius: .5rem;
+            background   : var(--bg-color-1);
+            box-shadow   : var(--box-shadow);
+
+            .image {
+                width   : 100%;
+                height  : 25rem;
+                padding : 1.5rem;
+                position: relative;
+
+                img {
+                    width        : 100%;
+                    height       : 100%;
+                    object-fit   : cover;
+                    border-radius: .5rem;
+                }
+
+                h3 {
+                    position     : absolute;
+                    top          : 2.5rem;
+                    left         : 2.5rem;
+                    border-radius: .5rem;
+                    background   : rgba(0, 0, 0, .3);
+                    padding      : .5rem 1.5rem;
+                    font-weight  : lighter;
+                    @include fontStyle(2rem, #FFF);
+
+                    i {
+                        color       : var(--orange);
+                        margin-right: .5rem;
+                    }
+
+                }
+            }
+
+            .content {
+                padding: 0 1.5rem 1.5rem;
+
+                .price {
+                    font-weight: 600;
+                    @include fontStyle(2.5rem, var(--text-color-1));
+
+                    span {
+
+                        text-decoration: line-through;
+                        font-weight    : lighter;
+                        @include fontStyle(1.5rem, var(--text-color-2));
+                    }
+                }
+
+                p {
+                    padding    : .5rem 0;
+                    line-height: 1.7;
+                    @include fontStyle(1.5rem, var(--text-color-2));
+                }
+            }
+
+
+        }
+    }
+}

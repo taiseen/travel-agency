@@ -62,7 +62,13 @@ themeBtn.addEventListener('click', () => {
 });
 
 
-
+window.addEventListener('scroll', () => {
+    searchForm.classList.remove('userClick');
+    loginForm.classList.remove('userClick');
+    loginForm.classList.remove('have-account');
+    userCreatingFrom.classList.remove('crate-account');
+    naveBar.classList.remove('userClick');
+});
 
 
 // swiper-slider functionality... 

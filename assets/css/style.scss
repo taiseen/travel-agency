@@ -75,14 +75,25 @@ section {
 }
 
 .heading {
-    padding-bottom: 3.5rem;
+    padding-bottom: 2rem;
     text-align    : center;
-    text-transform: uppercase;
-    @include fontStyle(4rem, $white);
+    @include fontStyle(4rem, var(--text-color-1));
 
     span {
-        text-transform: uppercase;
-        color         : $main-color;
+        position: relative;
+        z-index : 0;
+
+        &::before {
+            content   : "";
+            position  : absolute;
+            bottom    : 1rem;
+            left      : 0;
+            z-index   : -1;
+            background: var(--orange);
+            height    : 100%;
+            width     : 100%;
+            clip-path : polygon(0 90%, 100% 83%, 100% 100%, 0 100%);
+        }
     }
 }
 
@@ -104,4 +115,5 @@ section {
 @import 'header';
 @import 'home';
 @import 'from-container';
+@import 'packages';
 @import 'responsiveness';
