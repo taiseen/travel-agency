@@ -42,10 +42,18 @@
     #search-btn {
         display: inline-block;
     }
+
+    .home .content {
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    .from-container form .btn {
+        margin-top: 0;
     }
 }

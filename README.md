@@ -7,7 +7,8 @@ Inspire & Learning From ==> [this link](https://youtu.be/m9xD_raCUGE)
 ## Learning Context
 - SASS ==> variable , nesting , @mixing + @include 
 - Side Toggle Menu Button 
-- Div Opacity Hover Effect 
+- Interactive toggle menu's
+- Toggle Theme Colors
 - Responsiveness
 
 <img src="./assets/img/demo.png"/>

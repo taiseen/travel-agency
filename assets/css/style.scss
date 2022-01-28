@@ -69,8 +69,6 @@ section {
     padding      : 2rem 7%;
     margin-bottom: 3rem;
 
-    border: $border;
-
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -104,6 +102,6 @@ section {
 
 
 @import 'header';
-// @import 'responsiveness';
-// @import 'responsiveness';
+@import 'home';
+@import 'from-container';
 @import 'responsiveness';

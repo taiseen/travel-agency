@@ -1,0 +1,28 @@
+.home {
+
+    @include flex;
+    align-items: center;
+    padding-top: 7rem;
+
+    .image {
+        flex: 1 1 45rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        flex: 1 1 45rem;
+
+        h3 {
+            @include fontStyle(4rem, var(--text-color-1));
+        }
+
+        p {
+            @include fontStyle(1.7rem, var(--text-color-2));
+            line-height: 1.7;
+            padding    : 1rem 0;
+        }
+    }
+}
