@@ -1,0 +1,25 @@
+$black       : #222;
+$white       : #FFF;
+$light-bg    : #EEE;
+$main-color  : #512a10;
+$light-color : #666;
+$border      : .1rem solid $main-color;
+$box-shadow  : 0 .5rem 1rem 0 rgba(0, 0, 0, .1);
+
+
+@mixin grid($value) {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+    gap                  : 2rem;
+}
+
+@mixin flex{
+    display  : flex;
+    flex-wrap: wrap;
+    gap      : 1rem;
+}
+
+@mixin fontStyle($size, $color) {
+    font-size: $size;
+    color    : $color;
+}

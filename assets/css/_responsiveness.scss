@@ -1,0 +1,51 @@
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header {
+
+        .navbar,
+        .login-form,
+        .search-form {
+            right: 2rem;
+        }
+
+        .search-form {
+            position        : absolute;
+            top             : 115%;
+            width           : 90%;
+            border-radius   : .5rem;
+            background      : var(--bg-color-1);
+            box-shadow      : var(--box-shadow);
+            transform       : scale(0);
+            transform-origin: top;
+            transition      : transform .3s ease-in-out;
+
+            &.userClick {
+                transform: scale(1);
+            }
+        }
+    }
+
+    #search-btn {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
