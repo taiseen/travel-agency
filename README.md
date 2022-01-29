@@ -10,6 +10,7 @@ Inspire & Learning From ==> [this link](https://youtu.be/m9xD_raCUGE)
 - Interactive toggle menu's
 - Toggle Theme Colors
 - Responsiveness
+- Swiper Slider
 - Animate On Scroll Library (ASO)
 
-<img src="./assets/img/demo.png"/>
+<img src="./assets/img/demo.jpg"/>
