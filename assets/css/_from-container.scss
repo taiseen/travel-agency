@@ -26,6 +26,10 @@
             }
         }
 
+        input[type="date"] {
+            cursor: pointer;
+        }
+
         .btn {
             margin-top: 2.5rem;
             flex      : 1 1 23rem;

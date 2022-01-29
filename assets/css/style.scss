@@ -66,8 +66,11 @@ Style Scale for all
 but in responsive - its resizing at 991px
 */
 section {
-    padding      : 2rem 7%;
-    margin-bottom: 3rem;
+    width    : 100%;
+    max-width: 1500px;
+    margin   : 0 auto 3rem;
+    padding  : 2rem 7%;
+
 
     &:last-of-type {
         margin-bottom: 0;
@@ -116,4 +119,7 @@ section {
 @import 'home';
 @import 'from-container';
 @import 'packages';
+@import 'services';
+@import 'pricing';
+@import 'review';
 @import 'responsiveness';

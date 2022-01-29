@@ -47,8 +47,10 @@ Style Scale for all
 but in responsive - its resizing at 991px
 */
 section {
-  padding: 2rem 7%;
-  margin-bottom: 3rem; }
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 3rem;
+  padding: 2rem 7%; }
   section:last-of-type {
     margin-bottom: 0; }
 
@@ -247,7 +249,6 @@ section {
     bottom: 0;
     right: 1rem;
     cursor: pointer;
-    transform: scale(1);
     transform-origin: bottom right;
     transition: transform .5s linear;
     font-size: 5.5rem;
@@ -302,6 +303,8 @@ section {
       padding: 1rem;
       width: 100%;
       text-transform: none; }
+  .from-container form input[type="date"] {
+    cursor: pointer; }
   .from-container form .btn {
     margin-top: 2.5rem;
     flex: 1 1 23rem; }
@@ -353,6 +356,101 @@ section {
         line-height: 1.7;
         font-size: 1.5rem;
         color: var(--text-color-2); }
+
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem; }
+  .services .box-container .box {
+    position: relative;
+    padding: 2rem;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem; }
+    .services .box-container .box span {
+      font-size: 5rem;
+      color: var(--text-color-2);
+      font-weight: bolder;
+      position: absolute;
+      top: .5rem;
+      right: 1.5rem; }
+    .services .box-container .box i {
+      height: 6rem;
+      width: 6rem;
+      line-height: 6rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      background-color: var(--orange);
+      font-size: 2.5rem;
+      color: var(--white); }
+    .services .box-container .box h3 {
+      padding: 0.7rem 0;
+      font-size: 2.3rem;
+      color: var(--text-color-1); }
+    .services .box-container .box p {
+      line-height: 1.8;
+      font-size: 1.5rem;
+      color: var(--text-color-2); }
+
+.pricing .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem; }
+  .pricing .box-container .box {
+    padding: 2rem;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    text-align: center; }
+    .pricing .box-container .box h3 {
+      padding: 1rem;
+      background: var(--bg-color-2);
+      border-radius: .5rem;
+      font-size: 3rem;
+      color: var(--text-color-1); }
+    .pricing .box-container .box .price {
+      padding-top: 1rem; }
+      .pricing .box-container .box .price span {
+        font-size: 2rem;
+        color: var(--text-color-2); }
+      .pricing .box-container .box .price .amount {
+        font-weight: bolder;
+        font-size: 5rem;
+        color: var(--text-color-1); }
+    .pricing .box-container .box ul {
+      padding: 0.5rem 0; }
+      .pricing .box-container .box ul li {
+        padding: 1rem 0;
+        font-size: 1.7rem;
+        color: var(--text-color-1); }
+
+.review .review-slider {
+  box-shadow: var(--box-shadow); }
+  .review .review-slider .slide {
+    padding: 3rem;
+    text-align: center;
+    border-radius: .5rem;
+    background-color: var(--bg-color-1); }
+    .review .review-slider .slide img {
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: .5rem; }
+    .review .review-slider .slide h3 {
+      font-size: 2.5rem;
+      color: var(--text-color-1); }
+    .review .review-slider .slide p {
+      padding: 1rem 0;
+      line-height: 1.8;
+      font-size: 1.6rem;
+      color: var(--text-color-1); }
+    .review .review-slider .slide .stars {
+      padding: 1rem 0 1.5rem; }
+      .review .review-slider .slide .stars i {
+        font-size: 2rem;
+        color: var(--orange); }
 
 @media (max-width: 991px) {
   html {

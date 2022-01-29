@@ -212,7 +212,6 @@
         bottom          : 0;
         right           : 1rem;
         cursor          : pointer;
-        transform       : scale(1);
         transform-origin: bottom right;
         transition      : transform .5s linear;
         @include fontStyle(5.5rem, rgba(247, 159, 31, .3));

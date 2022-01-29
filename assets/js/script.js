@@ -100,11 +100,11 @@ goToTop.addEventListener('click', () => {
 
 // swiper-slider functionality... 
 
-let swiper = new Swiper('.reviews-slider', {
+let swiper = new Swiper('.review-slider', {
 
     loop: true,
     grabCursor: true,
-    spaceBetween: 20,
+    spaceBetween: 30,
 
     autoplay: {
         delay: 2500,
@@ -128,6 +128,10 @@ let swiper = new Swiper('.reviews-slider', {
         },
         768: {
             slidesPerView: 2,
+        },
+
+        991: {
+            slidesPerView: 3,
         },
     },
 

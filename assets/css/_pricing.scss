@@ -1,0 +1,45 @@
+.pricing {
+
+    .box-container {
+
+        @include grid(30rem);
+
+        .box {
+            padding      : 2rem;
+            background   : var(--bg-color-1);
+            box-shadow   : var(--box-shadow);
+            border-radius: .5rem;
+            text-align   : center;
+
+            h3 {
+                padding      : 1rem;
+                background   : var(--bg-color-2);
+                border-radius: .5rem;
+                @include fontStyle(3rem, var(--text-color-1));
+            }
+
+            .price {
+                padding-top: 1rem;
+
+                span {
+                    @include fontStyle(2rem, var(--text-color-2));
+                }
+
+                .amount {
+                    font-weight: bolder;
+                    @include fontStyle(5rem, var(--text-color-1));
+                }
+            }
+
+            ul{
+                padding: 0.5rem 0;
+
+                li{
+                    padding: 1rem 0;
+                    @include fontStyle(1.7rem, var(--text-color-1));
+                }
+            }
+        }
+        
+    }
+}

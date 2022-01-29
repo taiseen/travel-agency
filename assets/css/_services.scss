@@ -1,0 +1,43 @@
+.services {
+
+    .box-container {
+        @include grid(30rem);
+
+        .box {
+            position     : relative;
+            padding      : 2rem;
+            background   : var(--bg-color-1);
+            box-shadow   : var(--box-shadow);
+            border-radius: .5rem;
+
+            span {
+                @include fontStyle(5rem, var(--text-color-2));
+                font-weight: bolder;
+                position   : absolute;
+                top        : .5rem;
+                right      : 1.5rem;
+            }
+
+            i {
+                height          : 6rem;
+                width           : 6rem;
+                line-height     : 6rem;
+                text-align      : center;
+                margin-bottom   : 1rem;
+                border-radius   : 50%;
+                background-color: var(--orange);
+                @include fontStyle(2.5rem, var(--white));
+            }
+
+            h3 {
+                padding: 0.7rem 0;
+                @include fontStyle(2.3rem, var(--text-color-1));
+            }
+
+            p {
+                line-height: 1.8;
+                @include fontStyle(1.5rem, var(--text-color-2));
+            }
+        }
+    }
+}
