@@ -1,0 +1,27 @@
+.contact {
+
+    form {
+        max-width : 70rem;
+        margin    : 0 auto;
+        text-align: center;
+
+        .inputBox {
+            @include flex;
+            justify-content: space-between;
+
+            input {
+                @include userInput;
+            }
+
+            input {
+                width: 49%;
+            }
+        }
+
+        textarea {
+            @include userInput;
+            height: 20rem;
+            resize: none;
+        }
+    }
+}

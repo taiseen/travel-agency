@@ -1,8 +1,9 @@
 .review {
 
     .review-slider {
-
+        position  : relative;
         box-shadow: var(--box-shadow);
+        overflow-x: hidden;
 
         .slide {
             padding         : 3rem;
@@ -38,5 +39,17 @@
 
         }
 
+        .swiper-pagination-bullet-active {
+            background-color: var(--orange)
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--orangeLight);
+
+            &:hover {
+                color: var(--orange);
+            }
+        }
     }
 }

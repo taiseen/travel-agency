@@ -4,6 +4,7 @@
 
 :root {
     --orange      : #F79F1F;
+    --orangeLight : rgba(247, 159, 31, .3);
     --text-color-1: #444;
     --text-color-2: #666;
     --bg-color-1  : #fff;
@@ -122,4 +123,6 @@ section {
 @import 'services';
 @import 'pricing';
 @import 'review';
+@import 'contact';
+@import 'blogs';
 @import 'responsiveness';

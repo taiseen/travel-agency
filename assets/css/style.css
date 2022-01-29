@@ -2,6 +2,7 @@
 /* 28 - Jan - 2022  */
 :root {
   --orange: #F79F1F;
+  --orangeLight: rgba(247, 159, 31, .3);
   --text-color-1: #444;
   --text-color-2: #666;
   --bg-color-1: #fff;
@@ -93,7 +94,7 @@ section {
   box-shadow: var(--box-shadow);
   background: var(--bg-color-1);
   padding: 1.5rem 7%;
-  z-index: 1;
+  z-index: 999999999;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -252,7 +253,7 @@ section {
     transform-origin: bottom right;
     transition: transform .5s linear;
     font-size: 5.5rem;
-    color: rgba(247, 159, 31, 0.3); }
+    color: var(--orangeLight); }
     .header #goToTop i:hover {
       color: var(--orange); }
 
@@ -426,7 +427,9 @@ section {
         color: var(--text-color-1); }
 
 .review .review-slider {
-  box-shadow: var(--box-shadow); }
+  position: relative;
+  box-shadow: var(--box-shadow);
+  overflow-x: hidden; }
   .review .review-slider .slide {
     padding: 3rem;
     text-align: center;
@@ -451,6 +454,48 @@ section {
       .review .review-slider .slide .stars i {
         font-size: 2rem;
         color: var(--orange); }
+  .review .review-slider .swiper-pagination-bullet-active {
+    background-color: var(--orange); }
+  .review .review-slider .swiper-button-next,
+  .review .review-slider .swiper-button-prev {
+    color: var(--orangeLight); }
+    .review .review-slider .swiper-button-next:hover,
+    .review .review-slider .swiper-button-prev:hover {
+      color: var(--orange); }
+
+.contact form {
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center; }
+  .contact form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between; }
+    .contact form .inputBox input {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.7rem 0;
+      background: var(--bg-color-1);
+      box-shadow: var(--box-shadow);
+      border-radius: .5rem;
+      text-transform: none;
+      font-size: 1.6rem;
+      color: var(--text-color-1); }
+    .contact form .inputBox input {
+      width: 49%; }
+  .contact form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.7rem 0;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--text-color-1);
+    height: 20rem;
+    resize: none; }
 
 @media (max-width: 991px) {
   html {

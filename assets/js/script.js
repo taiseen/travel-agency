@@ -105,6 +105,7 @@ let swiper = new Swiper('.review-slider', {
     loop: true,
     grabCursor: true,
     spaceBetween: 30,
+    // centeredSlides: true,
 
     autoplay: {
         delay: 2500,
@@ -113,7 +114,7 @@ let swiper = new Swiper('.review-slider', {
 
     pagination: {
         el: '.swiper-pagination',
-        type: "fraction",
+        // type: "fraction",
         clickable: true,
     },
 
@@ -128,10 +129,6 @@ let swiper = new Swiper('.review-slider', {
         },
         768: {
             slidesPerView: 2,
-        },
-
-        991: {
-            slidesPerView: 3,
         },
     },
 

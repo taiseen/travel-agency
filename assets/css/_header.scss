@@ -6,7 +6,7 @@
     box-shadow     : var(--box-shadow);
     background     : var(--bg-color-1);
     padding        : 1.5rem 7%;
-    z-index        : 1;
+    z-index        : 999999999;
     display        : flex;
     align-items    : center;
     justify-content: space-between;
@@ -214,7 +214,7 @@
         cursor          : pointer;
         transform-origin: bottom right;
         transition      : transform .5s linear;
-        @include fontStyle(5.5rem, rgba(247, 159, 31, .3));
+        @include fontStyle(5.5rem, var(--orangeLight));
 
         i:hover {
             color: var(--orange);
