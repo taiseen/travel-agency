@@ -234,6 +234,26 @@ section {
       transform: scale(1); }
     .header .user-creating-form.hide {
       transform: scale(0); }
+  .header .scroll-indicator {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    height: .5rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: var(--orange); }
+  .header #goToTop {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+    cursor: pointer;
+    transform: scale(1);
+    transform-origin: bottom right;
+    transition: transform .5s linear;
+    font-size: 5.5rem;
+    color: rgba(247, 159, 31, 0.3); }
+    .header #goToTop i:hover {
+      color: var(--orange); }
 
 #search-btn {
   display: none; }

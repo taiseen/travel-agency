@@ -6,12 +6,14 @@ const themeBtn = document.getElementById('theme-btn');
 const searchBtn = document.getElementById('search-btn');
 const creatUser = document.getElementById('creatUser');
 const haveAccount = document.getElementById('haveAccount');
+const goToTop = document.getElementById('goToTop');
 
 const body = document.body;
 const naveBar = document.querySelector('.navbar');
 const loginForm = document.querySelector('.login-form');
 const userCreatingFrom = document.querySelector('.user-creating-form');
 const searchForm = document.querySelector('.search-form');
+const scrollIndicator = document.querySelector('.header .scroll-indicator');
 
 
 creatUser.addEventListener('click', () => {
@@ -39,8 +41,8 @@ loginBtn.addEventListener('click', () => {
 
     if (userCreatingFrom.classList.contains('crate-account')) {
         userCreatingFrom.classList.toggle('hide');
-    } 
-    
+    }
+
     naveBar.classList.remove('userClick');
     searchForm.classList.remove('userClick');
 });
@@ -68,8 +70,33 @@ window.addEventListener('scroll', () => {
     loginForm.classList.remove('have-account');
     userCreatingFrom.classList.remove('crate-account');
     naveBar.classList.remove('userClick');
+
+
+    // calculate user screen view portions...
+    let maxHeight = window.document.body.scrollHeight - window.innerHeight;
+    let percentage = ((window.scrollY / maxHeight)) * 100;
+
+    // at HTML horizontal bar display show incrementally... 
+    scrollIndicator.style.width = percentage + '%';
+
+
+    // condition - for showing upper arrow 
+    if (body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        goToTop.style.transform = "scale(1)";
+    } else {
+        goToTop.style.transform = "scale(0)";
+    }
+
 });
 
+
+goToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior : "smooth"
+    });
+});
 
 // swiper-slider functionality... 
 

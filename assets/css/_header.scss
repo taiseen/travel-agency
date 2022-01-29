@@ -194,6 +194,33 @@
             transform: scale(0);
         }
     }
+
+    .scroll-indicator {
+        position                        : absolute;
+        top                             : 99%;
+        left                            : 0;
+        // width                     : come form JS - by screen calculation;
+        // width                        : 80%;
+        height                          : .5rem;
+        border-top-right-radius         : 3px;
+        border-bottom-right-radius      : 3px;
+        background-color                : var(--orange);
+    }
+
+    #goToTop {
+        position        : fixed;
+        bottom          : 0;
+        right           : 1rem;
+        cursor          : pointer;
+        transform       : scale(1);
+        transform-origin: bottom right;
+        transition      : transform .5s linear;
+        @include fontStyle(5.5rem, rgba(247, 159, 31, .3));
+
+        i:hover {
+            color: var(--orange);
+        }
+    }
 }
 
 #search-btn {
