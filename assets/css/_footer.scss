@@ -1,0 +1,46 @@
+.footer {
+    background: var(--bg-color-2);
+
+    .box-container {
+        @include grid(22rem);
+
+        .box {
+
+            h3 {
+                padding: 1rem 0;
+                @include fontStyle(2.5rem, var(--text-color-1));
+            }
+
+            a {
+                display: block;
+                padding: 1rem 0;
+                @include fontStyle(1.5rem, var(--text-color-2));
+
+                &:hover i {
+                    padding-right: 1rem;
+                }
+
+                i {
+                    padding-right: .5rem;
+                    color        : var(--orange);
+                }
+            }
+
+            .email {
+                text-transform: lowercase;
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        padding   : 2rem 1rem 1rem;
+        margin-top: 2rem;
+        border-top: .1rem solid var(--text-color-2);
+        @include fontStyle(2rem, var(--text-color-1));
+
+        span {
+            color: var(--orange);
+        }
+    }
+}

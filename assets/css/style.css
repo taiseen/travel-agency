@@ -475,10 +475,10 @@ section {
     .contact form .inputBox input {
       width: 100%;
       padding: 1rem;
-      margin: 0.7rem 0;
+      margin: .7rem 0;
       background: var(--bg-color-1);
       box-shadow: var(--box-shadow);
-      border-radius: .5rem;
+      border-radius: .3rem;
       text-transform: none;
       font-size: 1.6rem;
       color: var(--text-color-1); }
@@ -487,15 +487,86 @@ section {
   .contact form textarea {
     width: 100%;
     padding: 1rem;
-    margin: 0.7rem 0;
+    margin: .7rem 0;
     background: var(--bg-color-1);
     box-shadow: var(--box-shadow);
-    border-radius: .5rem;
+    border-radius: .3rem;
     text-transform: none;
     font-size: 1.6rem;
     color: var(--text-color-1);
     height: 20rem;
     resize: none; }
+
+.blogs .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem; }
+  .blogs .box-container .box {
+    padding: 2rem;
+    border-radius: .5rem;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow); }
+    .blogs .box-container .box:hover .image img {
+      transform: scale(1.2); }
+    .blogs .box-container .box .image {
+      width: 100%;
+      height: 20rem;
+      overflow: hidden;
+      border-radius: .5rem;
+      background: var(--bg-color-2); }
+      .blogs .box-container .box .image img {
+        width: 100%;
+        height: 100%; }
+    .blogs .box-container .box .content h3 {
+      line-height: 1.5;
+      font-size: 2rem;
+      color: var(--text-color-1); }
+    .blogs .box-container .box .content .icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 0.1rem solid var(--text-color-2); }
+      .blogs .box-container .box .content .icons a {
+        font-size: 1.5rem;
+        color: var(--text-color-2); }
+        .blogs .box-container .box .content .icons a:hover {
+          color: var(--orange); }
+        .blogs .box-container .box .content .icons a i {
+          padding-right: .5rem;
+          color: var(--orange); }
+
+.footer {
+  background: var(--bg-color-2); }
+  .footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem; }
+    .footer .box-container .box h3 {
+      padding: 1rem 0;
+      font-size: 2.5rem;
+      color: var(--text-color-1); }
+    .footer .box-container .box a {
+      display: block;
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      color: var(--text-color-2); }
+      .footer .box-container .box a:hover i {
+        padding-right: 1rem; }
+      .footer .box-container .box a i {
+        padding-right: .5rem;
+        color: var(--orange); }
+    .footer .box-container .box .email {
+      text-transform: lowercase; }
+  .footer .credit {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    margin-top: 2rem;
+    border-top: 0.1rem solid var(--text-color-2);
+    font-size: 2rem;
+    color: var(--text-color-1); }
+    .footer .credit span {
+      color: var(--orange); }
 
 @media (max-width: 991px) {
   html {
@@ -529,11 +600,17 @@ section {
 
   .home .content {
     text-align: center; } }
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   html {
     font-size: 50%; }
 
   .from-container form .btn {
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .contact form .inputBox input {
+    width: 100%; }
+
+  .contact form .inputBox {
+    margin-bottom: .8rem; } }
 
 /*# sourceMappingURL=style.css.map */

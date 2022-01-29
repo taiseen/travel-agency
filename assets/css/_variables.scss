@@ -27,10 +27,10 @@ $box-shadow  : 0 .5rem 1rem 0 rgba(0, 0, 0, .1);
 @mixin userInput {
     width         : 100%;
     padding       : 1rem;
-    margin        : 0.7rem 0;
+    margin        : .7rem 0;
     background    : var(--bg-color-1);
     box-shadow    : var(--box-shadow);
-    border-radius : .5rem;
+    border-radius : .3rem;
     text-transform: none;
     @include fontStyle(1.6rem, var(--text-color-1));
 }

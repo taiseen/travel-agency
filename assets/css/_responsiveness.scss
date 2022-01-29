@@ -48,7 +48,7 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     html {
         font-size: 50%;
     }
@@ -56,4 +56,13 @@
     .from-container form .btn {
         margin-top: 0;
     }
+
+    .contact form .inputBox input {
+        width: 100%;
+    }
+
+    .contact form .inputBox {
+        margin-bottom: .8rem;
+    }
+
 }

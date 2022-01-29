@@ -10,5 +10,6 @@ Inspire & Learning From ==> [this link](https://youtu.be/m9xD_raCUGE)
 - Interactive toggle menu's
 - Toggle Theme Colors
 - Responsiveness
+- Animate On Scroll Library (ASO)
 
 <img src="./assets/img/demo.png"/>

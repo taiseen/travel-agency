@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="./assets/img/logo-plane.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer></script>
-    <script src="./assets/js/script.js" defer></script>
 
     <title>Travel Agency</title>
 </head>
@@ -114,7 +114,7 @@
     </header>
 
     <section class="home" id="home">
-        <div class="image">
+        <div class="image" >
             <img src="./assets/img/home-img.svg" alt="">
         </div>
         <div class="content">
@@ -454,36 +454,134 @@
         </form>
     </section>
 
+    <section class="blogs" id="blogs">
+
+        <h1 class="heading"> Our <span>Blogs</span> </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="./assets/img/blog-1.svg" alt="">
+                </div>
+
+                <div class="content">
+
+                    <h3>explore the worls now, adventure awaits</h3>
+                    <a href="#" class="btn">read more</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> 1st Jan 2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="./assets/img/blog-2.svg" alt="">
+                </div>
+
+                <div class="content">
+
+                    <h3>explore the worls now, adventure awaits</h3>
+                    <a href="#" class="btn">read more</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> 1st Jan 2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="./assets/img/blog-3.svg" alt="">
+                </div>
+
+                <div class="content">
+                    <h3>explore the worls now, adventure awaits</h3>
+                    <a href="#" class="btn">read more</a>
+                    <div class="icons">
+                        <a href="#"> <i class="fas fa-calendar"></i> 1st Jan 2022 </a>
+                        <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"> <i class="fas fa-chevron-right"></i>home</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>packages</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>services</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>pricing</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>review</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>contact</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>blogs</a>
+            </div>
+
+
+            <div class="box">
+                <h3>our branches</h3>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>Banglasedh</a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>India</a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>Japan</a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>USA</a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>Canada</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i>facebook</a>
+                <a href="#"> <i class="fab fa-twitter"></i>twitter</a>
+                <a href="#"> <i class="fab fa-instagram"></i>instagram</a>
+                <a href="#"> <i class="fab fa-linkedin"></i>linkedin</a>
+                <a href="#"> <i class="fab fa-pinterst"></i>pinterst</a>
+            </div>
+
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"> <i class="fas fa-phone"></i>+880 1717 416 412</a>
+                <a href="#" class="email"> <i class="fas fa-envelope"></i>taiseen.cse@gmail.com</a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>1200 - Dhaka, Bangladesh</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            created by <span>taiseen</span> | all rights reserved
+        </div>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+        ASO.init({
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 400, // values from 0 to 3000, with step 50ms
+            duration: 800, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation      
+        });
+
+        window.addEventListener('load', () => {
+            ASO.refresh();
+        });
+
+    </script>
 
 </body>
 
 </html>
-
-
-<!-- <section class="home" id="home"> </section>
-
-
-
-    <section class="about" id="about">
-        <h1 class="heading">
-            <span>about</span> us
-        </h1>
-    </section>
-
-    <section class="menu" id="menu"> </section>
-
-    <section class="review" id="review">
-
-        <div class="swiper reviews-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box"> </div>
-            </div>
-        </div>
-
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-
-    </section>
-
-    <section class="book" id="book"> </section> -->
