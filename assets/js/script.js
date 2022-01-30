@@ -94,12 +94,94 @@ goToTop.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         left: 0,
-        behavior : "smooth"
+        behavior: "smooth"
     });
 });
 
-// swiper-slider functionality... 
 
+// Font Color Changer
+/*****************************************************************
+******************************************************************
+******************************************************************/
+const root = document.querySelector(':root');
+const switchBtn = document.querySelector('.switchBtn');
+const allThemeBtn = document.querySelectorAll('.themeBtn');
+const colorSwitcher = document.querySelector('.colorSwitcher');
+
+switchBtn.addEventListener('click', () => {
+
+    // just Open & Close color drawer
+    colorSwitcher.classList.toggle('userClick');
+
+    // clicking upon any color
+    allThemeBtn.forEach(btn => {
+
+        // clicking upon selected color
+        btn.addEventListener('click', () => {
+
+            let dataColor = btn.getAttribute('data-color');
+            root.style.setProperty('--orange', dataColor);
+
+        })
+    });
+});
+/*****************************************************************
+******************************************************************
+******************************************************************/
+
+
+
+
+// SVG color injector + AOS loader
+/*****************************************************************
+******************************************************************
+******************************************************************/
+SVGInject(document.querySelectorAll("img.injectable"));
+
+AOS.init({
+    startEvent: 'load',
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    // offset: 120, // offset (in px) from the original trigger point
+    delay: 400, // values from 0 to 3000, with step 50ms
+    duration: 800, // values from 0 to 3000, with step 50ms
+    // easing: 'ease', // default easing for AOS animations
+    // once: false, // whether animation should happen only once - while scrolling down
+    // mirror: false, // whether elements should animate out while scrolling past them
+    // anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation      
+})
+
+// window.addEventListener('load', () => {
+//     AOS.refresh();
+// });
+/*****************************************************************
+******************************************************************
+******************************************************************/
+
+// DISABLE the RIGHT CLICK for viewing the ==> View Page Source Code
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+}, false);
+
+
+// DISABLE SHORTCUT KEY
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.keyCode==123) {
+        e.stopPropagation();
+        e.preventDefault();
+    }
+}, false);
+
+
+
+
+
+
+
+
+// swiper-slider functionality... 
+/*****************************************************************
+******************************************************************
+******************************************************************/
 let swiper = new Swiper('.review-slider', {
 
     loop: true,
@@ -133,3 +215,6 @@ let swiper = new Swiper('.review-slider', {
     },
 
 });
+/*****************************************************************
+******************************************************************
+******************************************************************/

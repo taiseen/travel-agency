@@ -214,10 +214,12 @@
         cursor          : pointer;
         transform-origin: bottom right;
         transition      : transform .5s linear;
-        @include fontStyle(5.5rem, var(--orangeLight));
+        opacity         : .3;
+        @include fontStyle(5.5rem, var(--orange));
 
-        i:hover {
-            color: var(--orange);
+        &:hover {
+            opacity: 1;
+            color  : var(--orange);
         }
     }
 }

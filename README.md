@@ -6,11 +6,13 @@ Inspire & Learning From ==> [this link](https://youtu.be/m9xD_raCUGE)
 
 ## Learning Context
 - SASS ==> variable , nesting , @mixing + @include 
-- Side Toggle Menu Button 
+- Animate On Scroll Library (ASO)
 - Interactive toggle menu's
+- Side Toggle Menu Button 
 - Toggle Theme Colors
+- Font Color Changing
+- SVG Color Changing
 - Responsiveness
 - Swiper Slider
-- Animate On Scroll Library (ASO)
 
 <img src="./assets/img/demo.jpg"/>

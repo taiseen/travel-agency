@@ -4,7 +4,7 @@
 
 :root {
     --orange      : #F79F1F;
-    --orangeLight : rgba(247, 159, 31, .3);
+    --orangeLight : #f79f1f4d;
     --text-color-1: #444;
     --text-color-2: #666;
     --bg-color-1  : #fff;
@@ -115,7 +115,7 @@ section {
     }
 }
 
-
+@import 'colorSwitcher';
 @import 'header';
 @import 'home';
 @import 'from-container';

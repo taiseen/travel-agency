@@ -1,0 +1,62 @@
+.colorSwitcher {
+
+    position  : fixed;
+    top       : 10rem;
+    right     : -25rem;
+    width     : 25rem;
+    padding   : .5rem;
+    z-index   : 10000;
+    background: transparent;
+    transition: right .3s ease;
+
+    &.userClick {
+        right: 0;
+    }
+
+    .switchBtn {
+        position  : absolute;
+        top       : -2rem;
+        left      : -6rem;
+        padding   : 2rem;
+        cursor    : pointer;
+        background: transparent;
+        @include fontStyle(4rem, var(--text-color-1));
+
+        i {
+            animation: rotate 2s linear infinite;
+        }
+    }
+
+    h3 {
+        color        : var(--orange);
+        font-size    : 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #333;
+        padding      : 5px 0;
+        text-align   : center;
+    }
+
+    .themeBtnContainer {
+
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+
+        .themeBtn {
+            display      : block;
+            width        : 6rem;
+            height       : 6rem;
+            margin       : .5rem;
+            border-radius: 50%;
+            cursor       : pointer;
+        }
+    }
+
+}
+
+@keyframes rotate {
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

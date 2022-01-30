@@ -45,10 +45,12 @@
 
         .swiper-button-next,
         .swiper-button-prev {
-            color: var(--orangeLight);
+            opacity: .3;
+            color  : var(--orange);
 
             &:hover {
-                color: var(--orange);
+                opacity: 1.0;
+                color  : var(--orange);
             }
         }
     }

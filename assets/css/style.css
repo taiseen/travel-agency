@@ -3,7 +3,7 @@
 /* 28 - Jan - 2022  */
 :root {
   --orange      : #F79F1F;
-  --orangeLight : rgba(247, 159, 31, .3);
+  --orangeLight : #f79f1f4d;
   --text-color-1: #444;
   --text-color-2: #666;
   --bg-color-1  : #fff;
@@ -19,8 +19,10 @@
   list-style        : none;
   text-decoration   : none;
   text-transform    : capitalize;
+  -webkit-box-sizing: border-box;
   box-sizing        : border-box;
   font-family       : 'Nunito', sans-serif;
+  -webkit-transition: all .1s linear;
   transition        : all .1s linear;
   /* user-select    : none; */
 }
@@ -84,15 +86,16 @@ section:last-of-type {
 }
 
 .heading span::before {
-  content   : "";
-  position  : absolute;
-  bottom    : 1rem;
-  left      : 0;
-  z-index   : -1;
-  background: var(--orange);
-  height    : 100%;
-  width     : 100%;
-  clip-path : polygon(0 90%, 100% 83%, 100% 100%, 0 100%);
+  content          : "";
+  position         : absolute;
+  bottom           : 1rem;
+  left             : 0;
+  z-index          : -1;
+  background       : var(--orange);
+  height           : 100%;
+  width            : 100%;
+  -webkit-clip-path: polygon(0 90%, 100% 83%, 100% 100%, 0 100%);
+  clip-path        : polygon(0 90%, 100% 83%, 100% 100%, 0 100%);
 }
 
 .btn {
@@ -110,18 +113,100 @@ section:last-of-type {
   letter-spacing: .2rem;
 }
 
+.colorSwitcher {
+  position          : fixed;
+  top               : 10rem;
+  right             : -25rem;
+  width             : 25rem;
+  padding           : .5rem;
+  z-index           : 10000;
+  background        : transparent;
+  -webkit-transition: right .3s ease;
+  transition        : right .3s ease;
+}
+
+.colorSwitcher.userClick {
+  right: 0;
+}
+
+.colorSwitcher .switchBtn {
+  position  : absolute;
+  top       : -2rem;
+  left      : -6rem;
+  padding   : 2rem;
+  cursor    : pointer;
+  background: transparent;
+  font-size : 4rem;
+  color     : var(--text-color-1);
+}
+
+.colorSwitcher .switchBtn i {
+  -webkit-animation: rotate 2s linear infinite;
+  animation        : rotate 2s linear infinite;
+}
+
+.colorSwitcher h3 {
+  color        : var(--orange);
+  font-size    : 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding      : 5px 0;
+  text-align   : center;
+}
+
+.colorSwitcher .themeBtnContainer {
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  -ms-flex-wrap   : wrap;
+  flex-wrap       : wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack   : center;
+  justify-content : center;
+}
+
+.colorSwitcher .themeBtnContainer .themeBtn {
+  display      : block;
+  width        : 6rem;
+  height       : 6rem;
+  margin       : .5rem;
+  border-radius: 50%;
+  cursor       : pointer;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform        : rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform        : rotate(360deg);
+  }
+}
+
 .header {
-  position       : fixed;
-  top            : 0;
-  left           : 0;
-  right          : 0;
-  box-shadow     : var(--box-shadow);
-  background     : var(--bg-color-1);
-  padding        : 1.5rem 7%;
-  z-index        : 999999999;
-  display        : flex;
-  align-items    : center;
-  justify-content: space-between;
+  position          : fixed;
+  top               : 0;
+  left              : 0;
+  right             : 0;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  background        : var(--bg-color-1);
+  padding           : 1.5rem 7%;
+  z-index           : 999999999;
+  display           : -webkit-box;
+  display           : -ms-flexbox;
+  display           : flex;
+  -webkit-box-align : center;
+  -ms-flex-align    : center;
+  align-items       : center;
+  -webkit-box-pack  : justify;
+  -ms-flex-pack     : justify;
+  justify-content   : space-between;
 }
 
 .header .logo {
@@ -135,12 +220,16 @@ section:last-of-type {
 }
 
 .header .search-form {
-  width        : 50rem;
-  height       : 4.5rem;
-  display      : flex;
-  align-items  : center;
-  background   : var(--bg-color-2);
-  border-radius: .5rem;
+  width            : 50rem;
+  height           : 4.5rem;
+  display          : -webkit-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  -webkit-box-align: center;
+  -ms-flex-align   : center;
+  align-items      : center;
+  background       : var(--bg-color-2);
+  border-radius    : .5rem;
 }
 
 .header .search-form input {
@@ -164,6 +253,8 @@ section:last-of-type {
 }
 
 .header .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -186,24 +277,32 @@ section:last-of-type {
 }
 
 .header .icons div i.fa-sun {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform        : rotate(180deg);
 }
 
 .header .navbar {
-  position        : absolute;
-  top             : 115%;
-  right           : 7%;
-  width           : 25rem;
-  background      : var(--bg-color-1);
-  box-shadow      : var(--box-shadow);
-  border-radius   : .5rem;
-  transform       : scale(0);
-  transform-origin: top right;
-  transition      : transform .3s ease-in-out;
+  position                : absolute;
+  top                     : 115%;
+  right                   : 7%;
+  width                   : 25rem;
+  background              : var(--bg-color-1);
+  -webkit-box-shadow      : var(--box-shadow);
+  box-shadow              : var(--box-shadow);
+  border-radius           : .5rem;
+  -webkit-transform       : scale(0);
+  transform               : scale(0);
+  -webkit-transform-origin: top right;
+  transform-origin        : top right;
+  -webkit-transition      : -webkit-transform .3s ease-in-out;
+  transition              : -webkit-transform .3s ease-in-out;
+  transition              : transform .3s ease-in-out;
+  transition              : transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .header .navbar.userClick {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform        : scale(1);
 }
 
 .header .navbar a {
@@ -223,16 +322,21 @@ section:last-of-type {
 
 .header .login-form,
 .header .user-creating-form {
-  position        : absolute;
-  top             : 115%;
-  right           : 7%;
-  width           : 35rem;
-  padding         : 2rem;
-  background      : var(--bg-color-1);
-  box-shadow      : var(--box-shadow);
-  border-radius   : .5rem;
-  transform-origin: top right;
-  transition      : transform .3s ease-in-out;
+  position                : absolute;
+  top                     : 115%;
+  right                   : 7%;
+  width                   : 35rem;
+  padding                 : 2rem;
+  background              : var(--bg-color-1);
+  -webkit-box-shadow      : var(--box-shadow);
+  box-shadow              : var(--box-shadow);
+  border-radius           : .5rem;
+  -webkit-transform-origin: top right;
+  transform-origin        : top right;
+  -webkit-transition      : -webkit-transform .3s ease-in-out;
+  transition              : -webkit-transform .3s ease-in-out;
+  transition              : transform .3s ease-in-out;
+  transition              : transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .header .login-form .inputBox,
@@ -260,18 +364,28 @@ section:last-of-type {
 
 .header .login-form .remember,
 .header .user-creating-form .remember {
-  display        : flex;
-  align-items    : center;
-  justify-content: space-between;
-  gap            : .5rem;
-  padding        : .5rem 0;
+  display          : -webkit-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  -webkit-box-align: center;
+  -ms-flex-align   : center;
+  align-items      : center;
+  -webkit-box-pack : justify;
+  -ms-flex-pack    : justify;
+  justify-content  : space-between;
+  gap              : .5rem;
+  padding          : .5rem 0;
 }
 
 .header .login-form .remember .checkBox,
 .header .user-creating-form .remember .checkBox {
-  display    : flex;
-  align-items: center;
-  gap        : .5rem;
+  display          : -webkit-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  -webkit-box-align: center;
+  -ms-flex-align   : center;
+  align-items      : center;
+  gap              : .5rem;
 }
 
 .header .login-form .remember label,
@@ -299,28 +413,34 @@ section:last-of-type {
 }
 
 .header .login-form {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+  transform        : scale(0);
 }
 
 .header .login-form.userClick {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform        : scale(1);
 }
 
 .header .login-form.have-account {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+  transform        : scale(0);
 }
 
 .header .user-creating-form {
-  width    : 40rem;
-  transform: scale(0);
+  width            : 40rem;
+  -webkit-transform: scale(0);
+  transform        : scale(0);
 }
 
 .header .user-creating-form.crate-account {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform        : scale(1);
 }
 
 .header .user-creating-form.hide {
-  transform: scale(0);
+  -webkit-transform: scale(0);
+  transform        : scale(0);
 }
 
 .header .scroll-indicator {
@@ -334,18 +454,24 @@ section:last-of-type {
 }
 
 .header #goToTop {
-  position        : fixed;
-  bottom          : 0;
-  right           : 1rem;
-  cursor          : pointer;
-  transform-origin: bottom right;
-  transition      : transform .5s linear;
-  font-size       : 5.5rem;
-  color           : var(--orangeLight);
+  position                : fixed;
+  bottom                  : 0;
+  right                   : 1rem;
+  cursor                  : pointer;
+  -webkit-transform-origin: bottom right;
+  transform-origin        : bottom right;
+  -webkit-transition      : -webkit-transform .5s linear;
+  transition              : -webkit-transform .5s linear;
+  transition              : transform .5s linear;
+  transition              : transform .5s linear, -webkit-transform .5s linear;
+  opacity                 : .3;
+  font-size               : 5.5rem;
+  color                   : var(--orange);
 }
 
-.header #goToTop i:hover {
-  color: var(--orange);
+.header #goToTop:hover {
+  opacity: 1;
+  color  : var(--orange);
 }
 
 #search-btn {
@@ -353,15 +479,22 @@ section:last-of-type {
 }
 
 .home {
-  display    : flex;
-  flex-wrap  : wrap;
-  gap        : 1rem;
-  align-items: center;
-  padding-top: 7rem;
+  display          : -webkit-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  -ms-flex-wrap    : wrap;
+  flex-wrap        : wrap;
+  gap              : 1rem;
+  -webkit-box-align: center;
+  -ms-flex-align   : center;
+  align-items      : center;
+  padding-top      : 7rem;
 }
 
 .home .image {
-  flex: 1 1 45rem;
+  -webkit-box-flex: 1;
+  -ms-flex        : 1 1 45rem;
+  flex            : 1 1 45rem;
 }
 
 .home .image img {
@@ -369,7 +502,9 @@ section:last-of-type {
 }
 
 .home .content {
-  flex: 1 1 45rem;
+  -webkit-box-flex: 1;
+  -ms-flex        : 1 1 45rem;
+  flex            : 1 1 45rem;
 }
 
 .home .content h3 {
@@ -385,18 +520,26 @@ section:last-of-type {
 }
 
 .from-container form {
-  display      : flex;
-  flex-wrap    : wrap;
-  gap          : 1rem;
-  align-items  : center;
-  padding      : 2rem;
-  background   : var(--bg-color-1);
-  box-shadow   : var(--box-shadow);
-  border-radius: .5rem;
+  display           : -webkit-box;
+  display           : -ms-flexbox;
+  display           : flex;
+  -ms-flex-wrap     : wrap;
+  flex-wrap         : wrap;
+  gap               : 1rem;
+  -webkit-box-align : center;
+  -ms-flex-align    : center;
+  align-items       : center;
+  padding           : 2rem;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  border-radius     : .5rem;
 }
 
 .from-container form .inputBox {
-  flex: 1 1 23rem;
+  -webkit-box-flex: 1;
+  -ms-flex        : 1 1 23rem;
+  flex            : 1 1 23rem;
 }
 
 .from-container form .inputBox span {
@@ -420,20 +563,25 @@ section:last-of-type {
 }
 
 .from-container form .btn {
-  margin-top: 2.5rem;
-  flex      : 1 1 23rem;
+  margin-top      : 2.5rem;
+  -webkit-box-flex: 1;
+  -ms-flex        : 1 1 23rem;
+  flex            : 1 1 23rem;
 }
 
 .packages .box-container {
+  display              : -ms-grid;
   display              : grid;
+  -ms-grid-columns     : (minmax(30rem, 1fr))[auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap                  : 2rem;
 }
 
 .packages .box-container .box {
-  border-radius: .5rem;
-  background   : var(--bg-color-1);
-  box-shadow   : var(--box-shadow);
+  border-radius     : .5rem;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
 }
 
 .packages .box-container .box .image {
@@ -446,6 +594,7 @@ section:last-of-type {
 .packages .box-container .box .image img {
   width        : 100%;
   height       : 100%;
+  -o-object-fit: cover;
   object-fit   : cover;
   border-radius: .5rem;
 }
@@ -492,17 +641,20 @@ section:last-of-type {
 }
 
 .services .box-container {
+  display              : -ms-grid;
   display              : grid;
+  -ms-grid-columns     : (minmax(30rem, 1fr))[auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap                  : 2rem;
 }
 
 .services .box-container .box {
-  position     : relative;
-  padding      : 2rem;
-  background   : var(--bg-color-1);
-  box-shadow   : var(--box-shadow);
-  border-radius: .5rem;
+  position          : relative;
+  padding           : 2rem;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  border-radius     : .5rem;
 }
 
 .services .box-container .box span {
@@ -539,17 +691,20 @@ section:last-of-type {
 }
 
 .pricing .box-container {
+  display              : -ms-grid;
   display              : grid;
+  -ms-grid-columns     : (minmax(30rem, 1fr))[auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap                  : 2rem;
 }
 
 .pricing .box-container .box {
-  padding      : 2rem;
-  background   : var(--bg-color-1);
-  box-shadow   : var(--box-shadow);
-  border-radius: .5rem;
-  text-align   : center;
+  padding           : 2rem;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  border-radius     : .5rem;
+  text-align        : center;
 }
 
 .pricing .box-container .box h3 {
@@ -586,9 +741,10 @@ section:last-of-type {
 }
 
 .review .review-slider {
-  position  : relative;
-  box-shadow: var(--box-shadow);
-  overflow-x: hidden;
+  position          : relative;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  overflow-x        : hidden;
 }
 
 .review .review-slider .slide {
@@ -602,6 +758,7 @@ section:last-of-type {
   height       : 10rem;
   width        : 10rem;
   border-radius: 50%;
+  -o-object-fit: cover;
   object-fit   : cover;
   margin-bottom: .5rem;
 }
@@ -633,12 +790,14 @@ section:last-of-type {
 
 .review .review-slider .swiper-button-next,
 .review .review-slider .swiper-button-prev {
-  color: var(--orangeLight);
+  opacity: .3;
+  color  : var(--orange);
 }
 
 .review .review-slider .swiper-button-next:hover,
 .review .review-slider .swiper-button-prev:hover {
-  color: var(--orange);
+  opacity: 1.0;
+  color  : var(--orange);
 }
 
 .contact form {
@@ -648,22 +807,28 @@ section:last-of-type {
 }
 
 .contact form .inputBox {
-  display        : flex;
-  flex-wrap      : wrap;
-  gap            : 1rem;
-  justify-content: space-between;
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  -ms-flex-wrap   : wrap;
+  flex-wrap       : wrap;
+  gap             : 1rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack   : justify;
+  justify-content : space-between;
 }
 
 .contact form .inputBox input {
-  width         : 100%;
-  padding       : 1rem;
-  margin        : .7rem 0;
-  background    : var(--bg-color-1);
-  box-shadow    : var(--box-shadow);
-  border-radius : .3rem;
-  text-transform: none;
-  font-size     : 1.6rem;
-  color         : var(--text-color-1);
+  width             : 100%;
+  padding           : 1rem;
+  margin            : .7rem 0;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  border-radius     : .3rem;
+  text-transform    : none;
+  font-size         : 1.6rem;
+  color             : var(--text-color-1);
 }
 
 .contact form .inputBox input {
@@ -671,34 +836,39 @@ section:last-of-type {
 }
 
 .contact form textarea {
-  width         : 100%;
-  padding       : 1rem;
-  margin        : .7rem 0;
-  background    : var(--bg-color-1);
-  box-shadow    : var(--box-shadow);
-  border-radius : .3rem;
-  text-transform: none;
-  font-size     : 1.6rem;
-  color         : var(--text-color-1);
-  height        : 20rem;
-  resize        : none;
+  width             : 100%;
+  padding           : 1rem;
+  margin            : .7rem 0;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
+  border-radius     : .3rem;
+  text-transform    : none;
+  font-size         : 1.6rem;
+  color             : var(--text-color-1);
+  height            : 20rem;
+  resize            : none;
 }
 
 .blogs .box-container {
+  display              : -ms-grid;
   display              : grid;
+  -ms-grid-columns     : (minmax(30rem, 1fr))[auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap                  : 2rem;
 }
 
 .blogs .box-container .box {
-  padding      : 2rem;
-  border-radius: .5rem;
-  background   : var(--bg-color-1);
-  box-shadow   : var(--box-shadow);
+  padding           : 2rem;
+  border-radius     : .5rem;
+  background        : var(--bg-color-1);
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow        : var(--box-shadow);
 }
 
 .blogs .box-container .box:hover .image img {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform        : scale(1.2);
 }
 
 .blogs .box-container .box .image {
@@ -721,11 +891,15 @@ section:last-of-type {
 }
 
 .blogs .box-container .box .content .icons {
-  display        : flex;
-  justify-content: space-between;
-  margin-top     : 2rem;
-  padding-top    : 1.5rem;
-  border-top     : 0.1rem solid var(--text-color-2);
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack   : justify;
+  justify-content : space-between;
+  margin-top      : 2rem;
+  padding-top     : 1.5rem;
+  border-top      : 0.1rem solid var(--text-color-2);
 }
 
 .blogs .box-container .box .content .icons a {
@@ -747,7 +921,9 @@ section:last-of-type {
 }
 
 .footer .box-container {
+  display              : -ms-grid;
   display              : grid;
+  -ms-grid-columns     : (minmax(22rem, 1fr))[auto-fit];
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   gap                  : 2rem;
 }
@@ -814,19 +990,26 @@ section:last-of-type {
   }
 
   .header .search-form {
-    position        : absolute;
-    top             : 115%;
-    width           : 90%;
-    border-radius   : .5rem;
-    background      : var(--bg-color-1);
-    box-shadow      : var(--box-shadow);
-    transform       : scale(0);
-    transform-origin: top;
-    transition      : transform .3s ease-in-out;
+    position                : absolute;
+    top                     : 115%;
+    width                   : 90%;
+    border-radius           : .5rem;
+    background              : var(--bg-color-1);
+    -webkit-box-shadow      : var(--box-shadow);
+    box-shadow              : var(--box-shadow);
+    -webkit-transform       : scale(0);
+    transform               : scale(0);
+    -webkit-transform-origin: top;
+    transform-origin        : top;
+    -webkit-transition      : -webkit-transform .3s ease-in-out;
+    transition              : -webkit-transform .3s ease-in-out;
+    transition              : transform .3s ease-in-out;
+    transition              : transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
   }
 
   .header .search-form.userClick {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+    transform        : scale(1);
   }
 
   #search-btn {
