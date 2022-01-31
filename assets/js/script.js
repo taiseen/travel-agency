@@ -1,19 +1,28 @@
 // 28 - Jan - 2022 
 
+const goToTop = document.getElementById('goToTop');
 const menuBtn = document.getElementById('menu-btn');
 const loginBtn = document.getElementById('login-btn');
 const themeBtn = document.getElementById('theme-btn');
 const searchBtn = document.getElementById('search-btn');
 const creatUser = document.getElementById('creatUser');
 const haveAccount = document.getElementById('haveAccount');
-const goToTop = document.getElementById('goToTop');
+
 
 const body = document.body;
 const naveBar = document.querySelector('.navbar');
 const loginForm = document.querySelector('.login-form');
-const userCreatingFrom = document.querySelector('.user-creating-form');
 const searchForm = document.querySelector('.search-form');
-const scrollIndicator = document.querySelector('.header .scroll-indicator');
+const scrollIndicator = document.querySelector('.scroll-indicator');
+const userCreatingFrom = document.querySelector('.user-creating-form');
+
+
+// Only For Color Switching Purpose
+const root = document.querySelector(':root');
+const switchBtn = document.querySelector('.switchBtn');
+const allThemeBtn = document.querySelectorAll('.themeBtn');
+const colorSwitcher = document.querySelector('.colorSwitcher');
+
 
 
 creatUser.addEventListener('click', () => {
@@ -33,6 +42,7 @@ menuBtn.addEventListener('click', () => {
     loginForm.classList.remove('have-account');
     userCreatingFrom.classList.remove('crate-account');
     searchForm.classList.remove('userClick');
+    colorSwitcher.classList.remove('userClick');
 });
 
 // login btn
@@ -45,6 +55,7 @@ loginBtn.addEventListener('click', () => {
 
     naveBar.classList.remove('userClick');
     searchForm.classList.remove('userClick');
+    colorSwitcher.classList.remove('userClick');
 });
 
 // Search btn
@@ -54,10 +65,11 @@ searchBtn.addEventListener('click', () => {
     loginForm.classList.remove('have-account');
     userCreatingFrom.classList.remove('crate-account');
     naveBar.classList.remove('userClick');
+    colorSwitcher.classList.remove('userClick');
 
 });
 
-// Theme btn
+// Theme toggle btn
 themeBtn.addEventListener('click', () => {
     themeBtn.children[0].classList.toggle('fa-sun');
     body.classList.toggle('userClickThemeToggle');
@@ -103,15 +115,17 @@ goToTop.addEventListener('click', () => {
 /*****************************************************************
 ******************************************************************
 ******************************************************************/
-const root = document.querySelector(':root');
-const switchBtn = document.querySelector('.switchBtn');
-const allThemeBtn = document.querySelectorAll('.themeBtn');
-const colorSwitcher = document.querySelector('.colorSwitcher');
 
 switchBtn.addEventListener('click', () => {
 
     // just Open & Close color drawer
     colorSwitcher.classList.toggle('userClick');
+
+    naveBar.classList.remove('userClick');
+    loginForm.classList.remove('userClick');
+    loginForm.classList.remove('have-account');
+    userCreatingFrom.classList.remove('crate-account');
+    searchForm.classList.remove('userClick');
 
     // clicking upon any color
     allThemeBtn.forEach(btn => {
@@ -121,7 +135,7 @@ switchBtn.addEventListener('click', () => {
 
             let dataColor = btn.getAttribute('data-color');
             root.style.setProperty('--orange', dataColor);
-
+            // root.style.setProperty('--orange', btn.style.backgroundColor);
         })
     });
 });
