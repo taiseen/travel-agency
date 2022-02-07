@@ -20,7 +20,7 @@
         padding   : 2rem;
         cursor    : pointer;
         background: transparent;
-        @include fontStyle(4rem, var(--text-color-1));
+        @include fontStyle(4rem, var(--orange));
 
         i {
             animation: rotate 2s linear infinite;

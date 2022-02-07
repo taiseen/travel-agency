@@ -133,9 +133,11 @@ switchBtn.addEventListener('click', () => {
         // clicking upon selected color
         btn.addEventListener('click', () => {
 
-            let dataColor = btn.getAttribute('data-color');
-            root.style.setProperty('--orange', dataColor);
-            // root.style.setProperty('--orange', btn.style.backgroundColor);
+            // let dataColor = btn.getAttribute('data-color');
+            // root.style.setProperty('--orange', dataColor);
+            root.style.setProperty('--orange', btn.style.backgroundColor);
+            colorSwitcher.classList.remove('userClick');
+
         })
     });
 });
@@ -179,7 +181,7 @@ document.addEventListener('contextmenu', (e) => {
 
 // DISABLE SHORTCUT KEY
 document.addEventListener('keydown', (e) => {
-    if (e.ctrlKey || e.keyCode==123) {
+    if (e.ctrlKey || e.keyCode == 123) {
         e.stopPropagation();
         e.preventDefault();
     }
